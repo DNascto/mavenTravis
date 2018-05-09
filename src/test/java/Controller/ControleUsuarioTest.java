@@ -68,7 +68,7 @@ public class ControleUsuarioTest {
         boolean cadastro = controleUsu.cadastrarUsuario(nome, telefone, login, senha, endereco);
         assertTrue(cadastro);
     }
-    /*
+   
     @Test (expected = Exception.class)
     public void testCadastrarUsuarioInvalido() { //possibilidade de nao funcionar
         String nome = null,
@@ -77,9 +77,12 @@ public class ControleUsuarioTest {
                 senha = null,
                 endereco = null;
 
+        when(usuarioDaoMock.cadastrarUsuario(any()))
+                .then(null);
+        
         controleUsu.cadastrarUsuario(nome, telefone, login, senha, endereco);        
     }
-    
+     
     @Test
     public void testListarUsuarios() {
         ArrayList<Usuarios> listaUsu = new ArrayList<>();
@@ -91,28 +94,31 @@ public class ControleUsuarioTest {
                 .thenReturn(listaUsu);
         
         ArrayList<Usuarios> list = controleUsu.listarUsuarios();
-        assertTrue(list != null);
-        //assertTrue(list.size() == 10);
+        assertNotNull(list);
+        assertTrue(list.size() == 10);
     }
     
-    @Ignore
     @Test (expected = Exception.class)
     public void testListarUsuarios_LancaException() { 
         ControleUsuario controlUsu = new ControleUsuario();
+        
+        when(usuarioDaoMock.listarUsuarios())
+                .then(null);
+        
         controlUsu.listarUsuarios();
     }
         
     @Test
     public void testDeletarUsuario() { 
         ControleUsuario controlUsu = new ControleUsuario();
-        controlUsu.deletarUsuario("teste");
+        usuarioDaoMock.deletarUsuario("teste");
+ //       controlUsu.deletarUsuario("teste");
     }
     
-    @Ignore
     @Test (expected = Exception.class)
     public void testDeletarUsuario_LancaException() { 
         ControleUsuario controlUsu = new ControleUsuario();
-        controlUsu.deletarUsuario("$###@@");
+        usuarioDaoMock.deletarUsuario(null);
+        //controlUsu.deletarUsuario("$###@@");
     }
-    */
 }
