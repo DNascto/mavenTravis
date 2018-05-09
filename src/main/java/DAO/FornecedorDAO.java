@@ -12,7 +12,6 @@ import java.util.ArrayList;
  */
 public class FornecedorDAO {
     private final Connection connection=null;
-    Fornecedores forn = new Fornecedores();
     
     public FornecedorDAO(){
         //this.connection = ModuloConexao.Conector();

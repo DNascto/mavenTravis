@@ -109,8 +109,7 @@ public class ControleUsuarioTest {
         
     @Test
     public void testDeletarUsuario() { 
-        ControleUsuario controlUsu = new ControleUsuario();
-        usuarioDaoMock.deletarUsuario("teste");
+        controleUsu.deletarUsuario("seila");
     }
     
 }
