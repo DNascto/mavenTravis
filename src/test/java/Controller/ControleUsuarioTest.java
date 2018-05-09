@@ -114,7 +114,7 @@ public class ControleUsuarioTest {
         usuarioDaoMock.deletarUsuario("teste");
  //       controlUsu.deletarUsuario("teste");
     }
-    
+    @Ignore
     @Test (expected = Exception.class)
     public void testDeletarUsuario_LancaException() { 
         ControleUsuario controlUsu = new ControleUsuario();
