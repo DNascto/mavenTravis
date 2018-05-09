@@ -24,13 +24,13 @@ public class ControleFornecedor {
             Fornecedores forn = new Fornecedores(nome, nome, endereco, cnpj);
             dao.cadastrarFornecedor(forn);
         } catch (Exception e) {
-            System.err.println("\n============================================");
-            System.err.println("\nCLASSE ControleFornecedor");
-            System.err.println("\nERRO NO MÉTODO cadastrarFornecedor");
-            System.err.println("\nCAUSA: " + e.getCause());
-            System.err.println("\nMENSAGEM " + e.getMessage());
+//            System.err.println("\n============================================");
+//            System.err.println("\nCLASSE ControleFornecedor");
+//            System.err.println("\nERRO NO MÉTODO cadastrarFornecedor");
+//            System.err.println("\nCAUSA: " + e.getCause());
+//            System.err.println("\nMENSAGEM " + e.getMessage());
             e.printStackTrace();
-            System.err.println("\n============================================");
+//            System.err.println("\n============================================");
             throw new RuntimeException(e);            
         }
     }
@@ -40,12 +40,12 @@ public class ControleFornecedor {
             ArrayList<Fornecedores> vetForn = dao.listarFornecedores();
             return vetForn;
         } catch (Exception e) {
-            System.err.println("\n============================================");
-            System.err.println("\nCLASSE ControleFornecedor");
-            System.err.println("\nERRO NO MÉTODO burscarFornecedore");
-            System.err.println("\n " + e.getCause());
-            System.err.println("\n " + e.getMessage());
-            System.err.println("\n============================================");
+//            System.err.println("\n============================================");
+//            System.err.println("\nCLASSE ControleFornecedor");
+//            System.err.println("\nERRO NO MÉTODO burscarFornecedore");
+//            System.err.println("\n " + e.getCause());
+//            System.err.println("\n " + e.getMessage());
+//            System.err.println("\n============================================");
             throw new RuntimeException(e);            
         }
     }
