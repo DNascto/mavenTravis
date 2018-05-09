@@ -40,17 +40,6 @@ public class ControleFornecedoresTest {
         forn.cadastrarFornecedor(nome, telefone, endereco, cnpj);
     }
     
-    @Ignore
-    @Test (expected = Exception.class)
-    public void testCadastrarFornecedor_LancaException() {
-        String nome = null;
-        String telefone = null;
-        String endereco = null;
-        String cnpj = null;
-                       
-        forn.cadastrarFornecedor(nome, telefone, endereco, cnpj);
-    }
-    
     @Test
     public void testListarFornecedores() {
         ArrayList<Fornecedores> listaForn = new ArrayList<>();
@@ -63,17 +52,5 @@ public class ControleFornecedoresTest {
         
         assertNotNull(listaForne);
         assertTrue(listaForne.size() == 10);
-    }
-    
-    @Test
-    public void testListarFornecedores_LancaException() {
-        ArrayList<Fornecedores> listaForn = new ArrayList<>();
-        
-        when(forneDaoMock.listarFornecedores())
-                .thenReturn(listaForn);
-        
-        ArrayList<Fornecedores> listaForne = forn.listarFornecedores();
-        
-        //assertNull(listaForne);
-    }
+    }    
 }
